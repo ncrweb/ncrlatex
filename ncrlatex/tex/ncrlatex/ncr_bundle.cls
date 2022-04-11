@@ -123,22 +123,28 @@
     \fancyhf{}% Clear header/footer
     \renewcommand*{\chaptermark}[1]{ {\chaptername\ \thechapter: ##1}{} }
     \fancyhfoffset[RO]{10mm}
-    \fancyhead[RE]{\includegraphics[width=2cm]{figures/ncrlogo_notext.png}}
-    \fancyhead[LE]{\@HeaderText}
-    \fancyhead[LO]{\includegraphics[width=2cm]{figures/ncrlogo_notext.png}}
-    \fancyhead[RO]{\leftmark}
+    \fancyhead[L]{\includegraphics[width=2cm]{figures/ncrlogo_notext.png}}
+    \fancyhead[R]{\@HeaderText}
+    
+    %\fancyhead[RE]{\includegraphics[width=2cm]{figures/ncrlogo_notext.png}}
+    %\fancyhead[LE]{\@HeaderText}
+    %\fancyhead[LO]{\includegraphics[width=2cm]{figures/ncrlogo_notext.png}}
+    %\fancyhead[RO]{\leftmark}
     \fancyfoot[C]{\ifnum\value{page}<2\relax\else\thepage\fi}
 }
 \pagestyle{plain}% Set page style to plain.
 
 % Heading styles
+% ---------------------------------------------------------------
 \usepackage{titlesec} 
-\titleformat{\part}[block]{\normalfont\huge}{}{1em}{\Huge}
-\titleformat{\chapter}[block]{\normalfont\huge}{}{0pt}{\Huge}
+\titleformat{\part}[block]{\normalfont\huge\color{ncrblue}}{}{1em}{\Huge}
+\titleformat{\chapter}[block]{\normalfont\huge\color{ncrblue}}{}{0pt}{\Huge}
 \titlespacing*{\chapter}{0pt}{-10pt}{10pt}
-\titleformat{\section}[block]{\normalfont\large}{\textcolor{gray75}{}}{0pt}{}
+\titleformat{\section}[block]{\normalfont\large\color{ncrblue}}{}{0pt}{}
 \titlespacing*{\section}{0pt}{0pt}{10pt}
 \setcounter{secnumdepth}{-2} 
+
+
 
 % =============================================================================
 % 3) Page margins
@@ -241,6 +247,22 @@
     \endgroup
     }
 
+
+\usepackage{tcolorbox}
+\AtBeginEnvironment{quote}{\singlespace\vspace{\topsep}\small\begin{tcolorbox}}
+\AtEndEnvironment{quote}{\vspace{\topsep}\endsinglespace\end{tcolorbox}}
+
+\tcbset{left skip=-20pt,
+        width=1.0\columnwidth,
+        boxrule=0pt,
+        colback=ncrgreenlight,
+        arc=0pt,
+        auto outer arc,
+        left=0pt,
+        right=0pt,
+        boxsep=5pt}
+
+
 % =============================================================================
 % 5) Custom title page
 % =============================================================================
@@ -305,19 +327,7 @@
     publisher: Netherlands Centre for River studies.
 }
 
-
-\newcommand{\ncrtitle}{%
-    
-    \frontmatter
-    % -- Cover page
-    \thispagestyle{empty}
-    \includepdf[offset=0cm \voffset]{\@CoverPage}
-    %\begin{picture}(0,0)\put(0,0){\includegraphics{frontpage/omslag2018-v1_p1.pdf}}\end{picture}%
-    \clearpage
-    % -- Title page
-    \maketitle
-
-    % -- Colofon page
+\newcommand{\ncrcolophon}{
     \begin{figure}[t]
         \centering
         \caption*{Organising partner:}
@@ -338,25 +348,39 @@
         \includegraphics[width=2.5in]{figures/nwologo.jpg}
     \end{figure}
     }{}
-    
-    % -- venue information
+
+    %% -- venue information
     \vfill
     \noindent\ignorespaces\conferencevenue
 
-    % -- Ncr contact information
+    %% -- Ncr contact information
     \contactncrsecretary
 
-    % -- How to cite
+    %% -- How to cite
     \vfill
-    \noindent\ignorespaces \textbf{Cite as}: {\@AuthorCitation\xspace(\@edition), \emph{\@title\xspace: NCR DAYS\xspace\@edition\xspace Proceedings}. Netherland Centre for River Studies publication \@PublicationNumber}
+    \noindent\ignorespaces \textbf{Cite as}: {\@AuthorCitation\xspace(\@edition), \emph{\@title\xspace: NCR DAYS\xspace\@edition\xspace Proceedings}. Netherlands Centre for River Studies publication \@PublicationNumber}
 
-    % -- Photo credits
+    %% -- Photo credits
     \vfill
     \noindent \textbf{Photo credits cover:} \@CoverCredits
     
-    % -- Copyright NCR
+    %% -- Copyright NCR
     \copyrightncr
+}
 
+\newcommand{\ncrtitle}{%
+    
+    \frontmatter
+    % -- Cover page
+    \thispagestyle{empty}
+    \includepdf[offset=0cm \voffset]{\@CoverPage}
+    \clearpage
+    % -- Title page
+    \maketitle
+
+    % -- Colofon page
+    \ncrcolophon
+    
     % -- Rest of all things (alpha numerical pagenumbering from hereon)
     \tableofcontents
     \mainmatter
@@ -371,15 +395,29 @@
 
 % command to insert abstracts
 \usepackage{pdfpages}
+\usepackage{hyperref}
 \usepackage[titles]{tocloft}
-\newcommand{\insertmydocument}[4]%
+\usepackage{bookmark}
+
+\newcommand{\insertabstract}[4]%
 { % Syntax: \insertmydocument{Toc level}{Title}{Subtitle}{File}
     % Requires: tocloft hyperref pdfpages
     %\newpage
-    %\phantomsection
+    \phantomsection
+    \includepdf[pages=-, offset=0.0cm -2.5cm]{#4}
+    \bookmark[level=#1,dest=\csname @currentHref\endcsname]{#2}%
     \cftaddtitleline{toc}{#1}{#2}{\thepage}
     \cftchapterprecistoc{#3}
-    \includepdf[pages=-, offset=0.0cm -2.5cm]{#4}
+}
+
+\newcommand{\insertsessioncover}[4]%
+{ % Syntax: \insertmydocument{Toc level}{Title}{Subtitle}{File}
+    % Requires: tocloft hyperref pdfpages
+    \phantomsection
+    \includepdf[pagecommand={\thispagestyle{empty}}, pages=#4, offset=0.0cm \voffset]{#3}
+    \bookmark[level=#1,dest=\csname @currentHref\endcsname]{#2}%
+    \cftaddtitleline{toc}{#1}{#2}{\thepage}
+    
 }
 
 % command to insert notespage
@@ -399,7 +437,7 @@
 % =============================================================================
 %
 
-\usepackage{hyperref}
+
 \hypersetup{
     unicode=false,          % non-Latin characters in Acrobats bookmarks
     pdftoolbar=true,        % show Acrobats toolbar?
@@ -416,7 +454,7 @@
                  serious gaming}, % list of keywords
     pdfnewwindow=true,      % links in new PDF window
     colorlinks=true,       % false: boxed links; true: colored links
-    linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
+    linkcolor=ncrgreen,          % color of internal links (change box color with linkbordercolor)
     citecolor=green,        % color of links to bibliography
     filecolor=magenta,      % color of file links
     urlcolor=blue,           % color of external links
