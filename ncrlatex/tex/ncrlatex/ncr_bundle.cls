@@ -47,7 +47,7 @@
               [2017/02/17]
 \makeatletter
 
-\LoadClass[12pt, a4paper,titlepage]{book}
+\LoadClass[12pt,a4paper,titlepage,oneside]{book}
 
 % =============================================================================
 % 1) Packages & variables
@@ -59,7 +59,7 @@
 \RequirePackage{blindtext, color}
 \RequirePackage{subcaption}
 \RequirePackage{pgffor, ifthen}
-
+\RequirePackage{longtable}
 \newcommand{\CoverPage}[1]{\def\@CoverPage{#1}}
 \newcommand{\CoverCredits}[1]{\def\@CoverCredits{#1}}
 \newcommand{\ConferenceVenueAddress}[1]{\def\@ConferenceVenueAddress{#1}}
@@ -71,17 +71,34 @@
 \newcommand{\edition}[1]{\def\@edition{#1}}
 \newcommand{\PublicationNumber}[1]{\def\@PublicationNumber{#1}}
 \newcommand{\AuthorCitation}[1]{\def\@AuthorCitation{#1}}
+
+
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{colortbl} % colour the cells and rows
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \definecolor{gray75}{gray}{0.75}
 \definecolor{gray65}{gray}{0.65}
+\definecolor{ncrgreen}{HTML}{629194} % section color
+\definecolor{ncrgreenmedium}{HTML}{9eb6b5} % table row
+\definecolor{ncrgreenlight}{HTML}{c9d6d6} % table row
+\definecolor{ncrblue}{HTML}{294172} % table row
+\definecolor{ncrbluemedium}{HTML}{6a829c} % table row
+\definecolor{ncrbluelight}{HTML}{b9c6d5} % table row
+
 
 % =============================================================================
 % 2) Fonts & style
 % =============================================================================
 
-% The NCR uses computer modern sans serif 
+% The NCR uses computer modern sans serif
 % see (http://www.tug.dk/FontCatalogue/computermodernsansserif/)
-\RequirePackage[T1]{fontenc}
-\renewcommand*\familydefault{\sfdefault}
+%\RequirePackage[OT1]{fontenc}
+%\renewcommand*\familydefault{\sfdefault}
+
+\usepackage[sfdefault,light,condensed]{roboto}  %% Option 'sfdefault' only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
 
 % Don't print chapter names at start of session
 \newcommand{\unchapter}[1]{%
