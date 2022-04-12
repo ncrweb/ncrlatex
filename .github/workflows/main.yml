@@ -23,15 +23,15 @@ jobs:
       - name: Github Action for LaTeX
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: templates/ncr_abstract_template.tex
+          root_file: tests/ncr_abstract_template.tex
           pre_compile: "sh install.sh"
           work_in_root_file_dir: true
       - name: Check pdf file
         run: |
-          file templates/ncr_abstract_template.pdf | grep -q ' PDF '
+          file tests/ncr_abstract_template.pdf | grep -q ' PDF '
       - name: Upload 
         uses: actions/upload-artifact@v3
         with:
           name: NCRAbstract
-          path: templates/ncr_abstract_template.pdf
+          path: tests/ncr_abstract_template.pdf
    
