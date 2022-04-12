@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out latest version from master branch
-        uses: actions/checkout@c2
+        uses: actions/checkout@v2
       - name: Github Action for LaTeX
         uses: xu-cheng/latex-action@v2
         with:
