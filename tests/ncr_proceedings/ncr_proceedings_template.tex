@@ -104,11 +104,16 @@ the LOC
 % ==============================================================
 
 % insert a session cover for session 1
-\insertsessioncover{chapter}{Session 1}{coverpages/sectioncover.pdf}{1}
+\insertsessioncover{chapter}{Session 1}{coverpages/sessioncover.pdf}{1}
 
 % insert abstracts
 \insertabstract{section}{Archer, J., ...}{Title of abstract 1}{abstracts/01-latex.pdf}
 \insertabstract{section}{Archer, J., ...}{Title of abstract 2}{abstracts/02-word.pdf}
+
+% alternatively, you can start a section using chapter
+\chapter{Session 2}
+\insertabstract{section}{Archer, J., ...}{Title of abstract 1}{abstracts/01-latex.pdf}
+
 
 % ========================================================================
 % Outroduction (information about NCR)
