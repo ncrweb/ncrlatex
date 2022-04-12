@@ -1,0 +1,125 @@
+\documentclass[oneside]{ncr_bundle}
+\begin{document}
+
+% ========================================================================
+% Frontpage information 
+% ========================================================================
+
+% Editors of the conference proceedings as shown on the title page.
+\author{Jonathan Archer \& Malcolm Reed (eds.)}
+
+% Editors of the conference proceedings as to appear in the citation
+\AuthorCitation{Archer, J., Reeds, M. (eds.)}
+
+% Cover page (make your own)
+\CoverPage{coverpages/coverpage.pdf}
+% To credit the person who made the cover page, and/or credit photograph sources, use:
+\CoverCredits{Cover attribution} 
+
+\HeaderText{NCR DAYS 2018: The Future River. Deltares}
+
+
+% Conference information
+% ---------------------------------------------------------
+\edition{2018}  % Edition, e.g. NCR DAYS 2022
+\title{The future river}  % Title/theme of the conference
+\date{8-9 February 2018}  % Date of the conference
+\OrganisingPartner{1} % {1=Deltares, 2=Wageningen, 3=IHE Delft, 4=Twente.
+%                        5=Utrecht, 6=rijkswaterstaat, 7=radboud, 8=TUD}
+\PublicationNumber{42-2018}  % Request the number at the NCR Programme Secretary!
+
+
+% Conference venue address & Contact
+\ConferenceVenueAddress{
+Deltares \\
+Boussinesqweg 1\\
+2629 HV Delft\\
+P.O.\ 177\\
+2600 MH Delft\\
+The Netherlands
+}
+
+% Contact information. These are tab aligned. The first row *must* be \=
+% subsequent rows \>, as shown below
+\ConferenceVenueContact{
+telephone: \=  +31\,88\,335\,82\,73\\
+fax:       \>  +31\,88\,335\,85\,82\\
+e-mail:    \>  info@deltares.nl\\
+www:       \>  \url{https://www.deltares.nl}
+}
+
+% ========================================================================
+% Frontpage generation, do not edit
+% ========================================================================
+
+% The \ncrtitle command generates the front page
+\ncrtitle
+       
+% ========================================================================
+% Introduction (information about the conference)
+% ========================================================================
+\chapter{Preface}
+The NCR DAYS 2018 present the 20th time this conference is organised!
+\blindtext
+
+With riverine thoughts,\\
+the LOC
+
+\chapter{Conference details}
+	\section{Organising partner}
+	This partner is the best partner since 1648...
+	\blindtext
+	\section{Venues}
+	Our campus was founded by the Visigoths and is widely considered ...
+	\blindtext
+	\section{Local organising committee (LOC)}
+	The LOC, colloquially refereed to as `The Avengers' consists of ...
+	\blindtext
+ 
+
+ \chapter{Program}
+ % insert program here. 
+
+% ==============================================================
+% Abstracts
+%
+% To add abstracts, use the \insertabstract command:
+%
+%    \insertabstract{section}{TITLE}{AUTHOR(S)}{PATH/TO/PDF}
+%
+%  for each abstract, use the above command and modify TITLE, 
+%  AUTHOR(S) and PATH/TO/PDF. Abstracts are inserted as sections
+%
+%
+%  To compartimentalise abstracts by session, you can either
+%  use the \chapter command. Alternatively, if you have prepared
+%  session covers, you can use the \insertsessioncover command:
+%
+%    \insertsessioncover{chapter}{SESSIONTITLE}{PATH/TO/PDF}{INT}
+%
+% where PATH/TO/PDF is the link to the session cover and INT
+% is the pagenumber in the pdf to use. 
+%
+% See example below for the use of these two commands. 
+% ==============================================================
+
+% insert a session cover for session 1
+\insertsessioncover{chapter}{Session 1}{coverpages/sectioncover.pdf}{1}
+
+% insert abstracts
+\insertabstract{section}{Archer, J., ...}{Title of abstract 1}{abstracts/01-latex.pdf}
+\insertabstract{section}{Archer, J., ...}{Title of abstract 2}{abstracts/02-word.pdf}
+
+% ========================================================================
+% Outroduction (information about NCR)
+% ========================================================================
+\input{ncrorganisation}
+
+% ========================================================================
+% Notes (deprecated)
+% Back when the proceedings where printed, the below command was used
+% to generate 'notes' pages
+% ========================================================================
+%\notespages
+	
+\end{document}

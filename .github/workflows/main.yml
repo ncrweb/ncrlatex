@@ -1,6 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Build abstract
+name: Compile templates
 
 # Controls when the workflow will run
 on:
@@ -20,18 +18,24 @@ jobs:
     steps:
       - name: Check out latest version from master branch
         uses: actions/checkout@v2
-      - name: Github Action for LaTeX
+      - name: Compile NCR Abstract
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: tests/ncr_abstract_template.tex
+          root_file: tests/ncr_abstract/ncr_abstract_template.tex
           pre_compile: "sh install.sh"
+          work_in_root_file_dir: true
+      - name: Compile NCR Proceedings
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: tests/ncr_proceedings/ncr_proceedings_template.tex
           work_in_root_file_dir: true
       - name: Check pdf file
         run: |
-          file tests/ncr_abstract_template.pdf | grep -q ' PDF '
+          file tests/ncr_abstract/ncr_abstract_template.pdf | grep -q ' PDF '
+          file tests/ncr_proceedings/ncr_proceedings_template.pdf | grep -q ' PDF '
       - name: Upload 
         uses: actions/upload-artifact@v3
         with:
-          name: NCRAbstract
-          path: tests/ncr_abstract_template.pdf
+          name: Tests
+          path: tests
    

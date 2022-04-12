@@ -331,7 +331,7 @@
     \begin{figure}[t]
         \centering
         \caption*{Organising partner:}
-        \ifdefstring{\@OrganisingPartner}{1}{\PartnerLogo{figures/deltareslogo.jpg}}{}
+        \ifdefstring{\@OrganisingPartner}{1}{\PartnerLogo{figures/deltareslogo.png}}{}
         \ifdefstring{\@OrganisingPartner}{2}{\PartnerLogo{figures/wageningenlogo.png}}{}
         \ifdefstring{\@OrganisingPartner}{3}{\PartnerLogo{figures/ihedelftlogo.png}}{}
         \ifdefstring{\@OrganisingPartner}{4}{\PartnerLogo{figures/Twentelogo.jpg}}{}
