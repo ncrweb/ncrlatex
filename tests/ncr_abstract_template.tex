@@ -1,0 +1,137 @@
+\documentclass[a4paper, twocolumn, final]{ncr_abstract}
+
+% ----------------------------------------------------------------------------
+% NCR abstract template file, to be used with ncr_abstract.cls 
+%
+% Read author instructions on the NCR website carefully before submission of 
+% LaTeX based abstracts.
+%
+% Contact: secretary@ncr-web.org or koen.berends@deltares.nl
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+% For review purposes, you may use line numbers. to show line numbers, uncomment
+% below strings and add the \linenumbers command after the frontmatter
+% Disable line numebers before submission!!!
+
+%\usepackage{lineno}
+%\modulolinenumbers[1]
+
+% Only use the provided bibliography style (do not edit lines below)
+\bibliographystyle{model2-names}\biboptions{authoryear}
+% ----------------------------------------------------------------------------
+
+\begin{document}
+	
+
+	\begin{frontmatter}
+		% The title of your abstract
+		% ---------------------------------------------------------------------
+		\title{A good title only has one capitalised word}
+	    \specialpapernotice{\hspace{1cm}}
+		
+		% If you are an invited speaker (e.g. Keynote), uncomment below line
+		%\specialpapernotice{\normalsize(\textit{Invited Paper})}	
+
+		% Authors and affilitations
+		% ---------------------------------------------------------------------
+		\author[Starfleet,NewBerlin]{Jonathan Archer\corref{mycorrespondingauthor}}
+		\cortext[mycorrespondingauthor]{Corresponding author}
+		\ead{j.archer@starfleet.ufp}
+		\ead[url]{www.startfleetacademy.com/jonathan}
+		
+		\author[Starfleet]{Montogomery Scott}
+		\author[Starfleet]{Kathryn Janeway}
+		
+		\address[Starfleet]{24-593 Federation Drive, San Francisco}
+		\address[NewBerlin]{360 Park Avenue South, New Berlin}
+		
+		% Keywords
+		% ---------------------------------------------------------------------
+		\begin{keyword}
+			Keyword1 \sep Keyword \sep Keyword3
+		\end{keyword}
+		
+	\end{frontmatter}
+	
+	% Abstract content
+	% ---------------------------------------------------------------------
+	% Note: NCR abstracts do not use numbered sections. Always use the 
+	% asterisk for headings, as shown below.
+
+	\section*{Sectioning}
+	The common paragraph structure of a paper is: Introduction (background, motivation of research), Method, Results, Conclusion, (Acknowledgements), References. There is no abstract or subtitle, but you can provide up to three keywords. 	
+
+	\subsection*{Subsection}
+	You can use subsection to structure sections. Don't use levels lower subsections (so no subsubsections or paragraphs). When abbreviations are used in an abstract submitted to the Netherlands Centre for River studies (NCR), make sure they are explained the first time introduced. 
+	
+	\section*{Lists}
+	To list items, you can either use numbered lists:
+	\begin{enumerate}
+		\item Item 1
+		\item Item 2
+	\end{enumerate}
+	Or bullets:
+	\begin{itemize}
+		\item Item 1
+		\item Item 2
+	\end{itemize}
+	
+	\section*{Figures}
+	Refer to figures in the text as: Fig. \ref{fig:cat}. Each figure has a figure caption below the figure (see example Fig. \ref{fig:cat}). Make sure that the text and numbers in the figure are legible and of good quality. When fitting a figure in a column makes the figure illegible, you can use the entire 
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\columnwidth]{figures/cat.png}
+		\caption{A photograph of a feline studying momentum distribution in a strongly curved open channel}
+		\label{fig:cat}
+	\end{figure}
+		
+	\section*{Citing and referencing}
+	Refer to literature in the text as \citep{Beck2002} or when the author’s name is used in the text: \citet{Beck2002}. Use the prescribed bibliography style file. Make sure that all references mentioned in the text are listed at the end of the paper under references and vice versa. Refer to an address of website, repository or explicitely: \url{www.ncr-web.org}. % Note that \href urls and hyperref links in general will not work in the book of abstracts
+	\section*{Tables}
+	Refer to tables in the text as: Table \ref{tab:table1}. Each table has a table caption above the table. The layout is flexible and to your own preference. However, make sure that the table is legible. The same as with figures, when fitting a table in a column reduces the legibility, you can use the entire width of the page.
+	
+	
+	\begin{table}[h]
+		\caption{Tables}
+		\label{tab:table1}
+		\begin{tabular}{l|ll}
+			\hline
+			& Column 1 & Column 2 \\
+			\hline
+			Row 1 & item(1,1) & item(1,2) \\
+			Row 2 & item(2,1) & item(2,2)
+		\end{tabular}
+	\end{table}
+	
+	\section*{Equations}
+	\begin{equation}
+	Y_i = \nu + \beta(X_i - \mu) + \theta\lambda
+	\end{equation}
+	\section*{Conclusion}
+	The conclusion goes here.
+	
+	
+	% Acknowledgements
+	% ---------------------------------------------------------------------
+	% Note: You are not required to acknowledge NCR. This is an example
+	{\small
+		\section*{Acknowledgements}
+		This research has benefited from cooperation within the Netherlands Centre for River studies and is sponsored under grant Wolf-359
+	}
+		
+	% references section
+	% ---------------------------------------------------------------------
+	\section*{References}
+
+	% If you use bibtex to generate your referenc, manually copy the contents of the 
+	% resultant *.bbl file here. Do  not submit the .bbl file. 
+	\begin{thebibliography}{1}
+		\small
+		\bibitem[{\textit{Beck}(2002)}]{Beck2002}
+		Beck, B. (2002), Model evaluation and performance, in \textit{Encyclopedia of
+			Environmetrics}, edited by A.~H. El-Shaarawi and W.~W. Piegorsch, John Wiley
+		and Sons Ltd.
+	\end{thebibliography}
+	
+\end{document}

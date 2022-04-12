@@ -1,0 +1,129 @@
+\documentclass[oneside]{ncr_bundle}
+\begin{document}
+
+% ========================================================================
+% Frontpage information 
+% ========================================================================
+
+% Editors of the conference proceedings
+\author{Ymkje Huismans, Koen D. Berends, Iris Niesten, Nick Leung, \\ 
+        Gert-Jan W. Geerling, Truus Karlas-van Panhuis \& Jaap C.J. Kwadijk (eds.)}
+\AuthorCitation{Huismans, Y., Berends, K.D., Niesten, I., Leung, N., Geerling, G.W., Karlas-vanPanhuis, T., Kwadijk, J.C.J.}
+% Conference information
+\edition{2018}  % Edition, e.g. NCR DAYS XXXX
+\title{The future river}  % Title/theme of the conference
+\date{8-9 February 2018}  % Date of the conference
+\OrganisingPartner{1} % {1=Deltares, 2=Wageningen, 3=IHE Delft, 4=Twente.
+%                        5=Utrecht, 6=rijkswaterstaat, 7=radboud, 8=TUD}
+\PublicationNumber{42-2018}  % Request a number at the NCR Programme Secretary
+
+
+% Conference venue address & Contact
+\ConferenceVenueAddress{
+Deltares \\
+Boussinesqweg 1\\
+2629 HV Delft\\
+P.O.\ 177\\
+2600 MH Delft\\
+The Netherlands
+}
+
+\ConferenceVenueContact{
+telephone: \=  +31\,88\,335\,82\,73\\
+fax:       \>  +31\,88\,335\,85\,82\\
+e-mail:    \>  info@deltares.nl\\
+www:       \>  \url{https://www.deltares.nl}
+}
+
+\HeaderText{NCR DAYS 2018: The Future River. Deltares}
+
+% ========================================================================
+% Frontpage generation, do not edit
+% ========================================================================
+
+% The \ncrtitle command generates the front page, the \tableofcontents generates the TOC
+\ncrtitle
+\tableofcontents
+       
+% ========================================================================
+% Introduction (information about the conference)
+% ========================================================================
+\chapter{Introduction}
+The NCR DAYS 2018 present the 20th time this conference is organised!
+\blindtext
+
+With riverine thoughts,\\
+the LOC
+\chapter{Conference details}
+	\section{Organising partner}
+	This partner is the best partner since 1648...
+	\blindtext
+	\section{Venues}
+	Our campus was founded by the Visigoths and is widely considered ...
+	\blindtext
+	\section{Local organising committee (LOC)}
+	The LOC, colloquially refereed to as `The Avengers' consists of ...
+	\blindtext
+    
+ \chapter{Program}
+    \textit{add program here}
+ 
+% ==============================================================
+% Abstracts
+% ==============================================================
+   \includepdfset{pagecommand={\thispagestyle{plain}}} 
+  	\chapter{Keynotes}
+        \insertmydocument{section}{Very interesting keynote}{K. Eynote}{abstracts/01-latex.pdf}
+        \insertmydocument{section}{Very interesting keynote}{K. Eynote}{abstracts/01-latex.pdf}
+        \insertmydocument{section}{Very interesting keynote}{K. Eynote}{abstracts/01-latex.pdf}
+        \insertmydocument{section}{Very interesting keynote}{K. Eynote}{abstracts/01-latex.pdf}
+
+    % Session x
+    % ==============================================================
+	
+	\chapter{Session I \\ Morpho- and hydrodynamic processes}
+	
+	
+	% Contents
+	\insertmydocument{section}{A good title only has one capitalised word}{J. Archer, M. Scott and K. Janeway}{abstracts/01-latex.pdf}
+	\insertmydocument{section}{Word document}{Author}{abstracts/02-word.pdf}	
+    
+    % Session x
+    % ==============================================================
+	\chapter{Session II \\ Rivers, health and ecosystems}
+	\insertmydocument{section}{Word document}{Author}{abstracts/02-word.pdf}	
+    
+    % Session x
+    % ==============================================================
+    \chapter{Session III \\ Communication and participation}
+    \insertmydocument{section}{Word document}{Author}{abstracts/02-word.pdf}	
+    
+    % Session x
+    % ==============================================================
+    \chapter{Session IV \\ Management of Self-Sustaining Rivers}
+    \insertmydocument{section}{Word document}{Author}{abstracts/02-word.pdf}	
+    
+    % Session x
+    % ==============================================================
+    \chapter{Session V \\ Advances in river modelling and observation}
+    \insertmydocument{section}{Word document}{Author}{abstracts/02-word.pdf}	
+
+    % Session x
+    % ==============================================================
+    \chapter{Session VI \\ Estuaries and Deltas}
+    \insertmydocument{section}{Word document}{Author}{abstracts/02-word.pdf}	
+    
+	% Session x
+    % ==============================================================
+    \chapter{Session VII \\ Understanding river engineering}
+    \insertmydocument{section}{Word document}{Author}{abstracts/02-word.pdf}	
+
+% ========================================================================
+% Outroduction (information about NCR)
+% ========================================================================
+\input{ncrpartners}
+\input{ncrorganisation.tex}
+
+\notespages
+	
+\end{document}
