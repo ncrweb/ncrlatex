@@ -28,6 +28,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: tests/ncr_proceedings/ncr_proceedings_template.tex
+          pre_compile: "sh install.sh"
           work_in_root_file_dir: true
       - name: Check pdf file
         run: |
