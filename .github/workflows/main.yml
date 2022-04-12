@@ -29,4 +29,9 @@ jobs:
       - name: Check pdf file
         run: |
           file templates/ncr_abstract_template.pdf | grep -q ' PDF '
+      - name: Upload 
+        uses: actions/upload-artifact@v3
+        with:
+          name: NCRAbstract
+          path: templates/ncr_abstract_template.pdf
    
