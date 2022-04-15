@@ -1,6 +1,6 @@
 # NCR Abstract & Book of Abstracts style
 
-[![GitHub Actions Status](https://github.com/ncrweb/ncrlatex/workflows/Build%20abstract/badge.svg)](https://github.com/ncrweb/ncrlatex/actions)
+[![GitHub Actions Status](https://github.com/ncrweb/ncrlatex/workflows/Compile%20templates/badge.svg)](https://github.com/ncrweb/ncrlatex/actions)
 
 LaTeX templates in the housestyle of the [Netherlands Centre for River studies](https://ncr-web.org). 
 
