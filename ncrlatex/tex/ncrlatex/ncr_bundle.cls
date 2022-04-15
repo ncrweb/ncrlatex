@@ -287,11 +287,11 @@
         \begin{tabular}{@{}p{0.50\textwidth}p{0.50\textwidth}}
         \begin{tabbing}
             \textbf{Contact NCR} \\
-            ir. K.D. Berends (Programme Secretary)\\
+            dr. ir. K.D. Berends (Programme Secretary)\\
             Netherlands Centre for River Studies \\
-            c/o University of Twente\\
-            P.O. box 217\\
-            7500 AE Enschede\\
+            c/o Deltares\\
+            Boussinesqweg 1, 2629 HV Delft\\
+            P.O. Box 177, 2600 MH Delft\\
             The Netherlands
         \end{tabbing}
         &
