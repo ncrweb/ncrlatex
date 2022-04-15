@@ -1,6 +1,7 @@
 # NCR Abstract & Book of Abstracts style
 
 [![GitHub Actions Status](https://github.com/ncrweb/ncrlatex/workflows/Compile%20templates/badge.svg)](https://github.com/ncrweb/ncrlatex/actions)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-lightgrey.svg?style=plastic)](https://conventionalcommits.org)
 
 LaTeX templates in the housestyle of the [Netherlands Centre for River studies](https://ncr-web.org). 
 
