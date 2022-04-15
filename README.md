@@ -9,7 +9,7 @@ LaTeX templates in the housestyle of the [Netherlands Centre for River studies](
 
 Templates are tested on an Ubuntu full TeXLive installation. Installation instructions for other operating systems are available but these are not tested in CI. 
 
-### Linux
+### Linux & macOS
 
 To install on linux, clone the git repository and simply run `install.sh` script. 
 
@@ -21,10 +21,6 @@ To install on linux, clone the git repository and simply run `install.sh` script
 - Click on the blue '+' ' to a new path. Select the 'ncrlatex' directory containing the 'tex' subdirectory
 - Click Apply. You may receive a warning that the directory "does not look TDS-compliant". You can safely ignore this. 
 - To test if it was added succesfully, try to compile one of the template files in 'tests' directory
-
-### MacOS
-
-Not yet tested
 
 
 ## License
