@@ -1,5 +1,24 @@
 \documentclass[oneside]{ncr_bundle}
-\begin{document}
+
+\usepackage{setspace}
+\usepackage{etoolbox}
+\usepackage{tcolorbox}
+\AtBeginEnvironment{quote}{\singlespace\vspace{\topsep}\small\begin{tcolorbox}}
+\AtEndEnvironment{quote}{\vspace{\topsep}\endsinglespace\end{tcolorbox}}
+
+\tcbset{left skip=-20pt,
+		width=1.0\columnwidth,
+		boxrule=0pt,
+		colback=ncrgreenlight,
+		arc=0pt,
+		auto outer arc,
+		left=0pt,
+		right=0pt,
+		boxsep=5pt}
+
+
+
+\begin{document} 
 
 % ========================================================================
 % Frontpage information 
@@ -82,7 +101,6 @@ the LOC
 
 % ==============================================================
 % Abstracts
-%
 % To add abstracts, use the \insertabstract command:
 %
 %    \insertabstract{section}{TITLE}{AUTHOR(S)}{PATH/TO/PDF}

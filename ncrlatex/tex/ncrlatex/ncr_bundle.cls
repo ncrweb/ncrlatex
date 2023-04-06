@@ -48,7 +48,7 @@
 \makeatletter
 
 \LoadClass[12pt,a4paper,titlepage,oneside]{book}
-
+\usepackage{layout}
 % =============================================================================
 % 1) Packages & variables
 % =============================================================================
@@ -76,6 +76,7 @@
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{colortbl} % colour the cells and rows
 \usepackage[normalem]{ulem}
+\usepackage{multicol}
 \useunder{\uline}{\ul}{}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \definecolor{gray75}{gray}{0.75}
@@ -138,11 +139,14 @@
 % ---------------------------------------------------------------
 \usepackage{titlesec} 
 \titleformat{\part}[block]{\normalfont\huge\color{ncrblue}}{}{1em}{\Huge}
-\titleformat{\chapter}[block]{\normalfont\huge\color{ncrblue}}{}{0pt}{\Huge}
+\titleformat{\chapter}[block]{\normalfont\bfseries\color{ncrblue}}{}{0pt}{\LARGE}
 \titlespacing*{\chapter}{0pt}{-10pt}{10pt}
-\titleformat{\section}[block]{\normalfont\large\color{ncrblue}}{}{0pt}{}
+\titleformat{\section}[block]{\normalfont\large\bfseries\color{ncrblue}}{}{0pt}{}
 \titlespacing*{\section}{0pt}{0pt}{10pt}
 \setcounter{secnumdepth}{-2} 
+
+
+
 
 
 
@@ -150,13 +154,18 @@
 % 3) Page margins
 % =============================================================================
 
-\setlength{\voffset}{-2cm}
+\hoffset -1in \voffset -1in
 \setlength{\topmargin}{1cm}
 \setlength{\textheight}{650pt}
 \setlength{\marginparwidth}{0cm}
 \setlength{\headheight}{0.5cm}
 \setlength{\headsep}{1cm}
 \setlength{\footskip}{3cm}
+\setlength{\oddsidemargin}{25mm}
+\setlength{\evensidemargin}{25mm}
+\setlength{\textwidth}{160mm} % 210mm-\oddsidemargin-\evensidemargin
+\marginparsep 0mm
+\marginparwidth 0mm
 \linespread{1.2}
 
 % =============================================================================
@@ -247,20 +256,6 @@
     \endgroup
     }
 
-
-\usepackage{tcolorbox}
-\AtBeginEnvironment{quote}{\singlespace\vspace{\topsep}\small\begin{tcolorbox}}
-\AtEndEnvironment{quote}{\vspace{\topsep}\endsinglespace\end{tcolorbox}}
-
-\tcbset{left skip=-20pt,
-        width=1.0\columnwidth,
-        boxrule=0pt,
-        colback=ncrgreenlight,
-        arc=0pt,
-        auto outer arc,
-        left=0pt,
-        right=0pt,
-        boxsep=5pt}
 
 
 % =============================================================================
@@ -404,7 +399,7 @@
     % Requires: tocloft hyperref pdfpages
     %\newpage
     \phantomsection
-    \includepdf[pages=-, offset=0.0cm -2.5cm]{#4}
+    \includepdf[pages=-, offset=2.5cm -2.5cm]{#4}
     \bookmark[level=#1,dest=\csname @currentHref\endcsname]{#2}%
     \cftaddtitleline{toc}{#1}{#2}{\thepage}
     \cftchapterprecistoc{#3}
@@ -431,6 +426,8 @@
         }
 }
 \newcommand{\notespages}{\notes[5pt]{128}{\textwidth}} % 33 lines per page
+
+% Quotes
 
 % =============================================================================
 % 7) Hyperref
@@ -461,5 +458,10 @@
     bookmarksopen=true,
     bookmarksdepth=6
 }
+
+
+
+
+
 
 \endinput
