@@ -368,7 +368,7 @@
     \frontmatter
     % -- Cover page
     \thispagestyle{empty}
-    \includepdf[offset=0cm \voffset]{\@CoverPage}
+    \includepdf[offset=2.5cm -2.5cm \voffset]{\@CoverPage}
     \clearpage
     % -- Title page
     \maketitle
@@ -409,7 +409,7 @@
 { % Syntax: \insertmydocument{Toc level}{Title}{Subtitle}{File}
     % Requires: tocloft hyperref pdfpages
     \phantomsection
-    \includepdf[pagecommand={\thispagestyle{empty}}, pages=#4, offset=0.0cm \voffset]{#3}
+    \includepdf[pagecommand={\thispagestyle{empty}}, pages=#4, offset=2.5cm -2.5cm \voffset]{#3}
     \bookmark[level=#1,dest=\csname @currentHref\endcsname]{#2}%
     \cftaddtitleline{toc}{#1}{#2}{\thepage}
     
