@@ -8,7 +8,7 @@
 %%                            5=Utrecht, 6=rijkswaterstaat, 7=radboud, 8=TUD}
 %% \ConferenceVenue{str} : as input, give the address of the conference venue
 %% \ConferenceContact{str} : as input, give the contact information of the conference 
-%% \IsCosponsoredByNWO{str}: options are ['NWO']
+%% \IsCosponsoredBy{str}: options are ['NWO']
 %% \ncrtitle : redefinition of the \maketitle
 %% \insertmydocument{section}{title}{authors}{path to file}: inserts a single abstract,
 %%                                                           file must be pdf 
@@ -336,8 +336,8 @@
     \ifdefstring{\@IsCosponsoredBy}{NWO}{
     \begin{figure}[t]
         \centering
-        \caption*{Co-sponsored by:}  
-        \includegraphics[width=2.5in]{figures/nwologo.jpg}
+        \caption*{Sponsored by:}  
+        \includegraphics[width=1.0in]{figures/nwologo.jpg}
     \end{figure}
     }{}
 
