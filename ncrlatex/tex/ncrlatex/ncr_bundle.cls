@@ -121,16 +121,11 @@
 \usepackage{fancyhdr}
 \renewcommand{\headrulewidth}{0pt}
 \fancypagestyle{plain}{
-    \fancyhf{}% Clear header/footer
-    \renewcommand*{\chaptermark}[1]{ {\chaptername\ \thechapter: ##1}{} }
+    \fancyhf{} % Clear header/footer
     \fancyhfoffset[RO]{10mm}
     \fancyhead[L]{\includegraphics[width=2cm]{figures/ncrlogo_notext.png}}
     \fancyhead[R]{\@HeaderText}
     
-    %\fancyhead[RE]{\includegraphics[width=2cm]{figures/ncrlogo_notext.png}}
-    %\fancyhead[LE]{\@HeaderText}
-    %\fancyhead[LO]{\includegraphics[width=2cm]{figures/ncrlogo_notext.png}}
-    %\fancyhead[RO]{\leftmark}
     \fancyfoot[C]{\ifnum\value{page}<2\relax\else\thepage\fi}
 }
 \pagestyle{plain}% Set page style to plain.
@@ -139,8 +134,10 @@
 % ---------------------------------------------------------------
 \usepackage{titlesec} 
 \titleformat{\part}[block]{\normalfont\huge\color{ncrblue}}{}{1em}{\Huge}
-\titleformat{\chapter}[block]{\normalfont\bfseries\color{ncrblue}}{}{0pt}{\LARGE}
+
+\titleformat{\chapter}[block]{\normalfont\bfseries\color{ncrblue}}{\thechapter}{0pt}{\LARGE}
 \titlespacing*{\chapter}{0pt}{-10pt}{10pt}
+
 \titleformat{\section}[block]{\normalfont\large\bfseries\color{ncrblue}}{}{0pt}{}
 \titlespacing*{\section}{0pt}{0pt}{10pt}
 \setcounter{secnumdepth}{-2} 
